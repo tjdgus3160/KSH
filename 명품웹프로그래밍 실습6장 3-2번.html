@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>document.write()</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	document.write()
+</script>
+<h3>document.write()로 표만들기</h3>
+<hr>
+<table border="1">
+	<tr>
+		<th>n</th>
+		<script type="text/javascript">
+			var i;
+			for(i=0;i<10;i++)
+				document.write("<td>"+i+"</td>");
+		</script>
+	</tr>
+	<tr>
+		<th>n<sup>2</sup></th>
+		<script type="text/javascript">
+			var i;
+			for(i=0;i<10;i++)
+				document.write("<td>"+i*i+"</td>")
+		</script>
+	</tr>
+</table>
+</body>
+</html>
