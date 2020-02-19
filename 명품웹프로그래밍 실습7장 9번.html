@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>book 객체 만들기</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<h3>book 객체 만들기</h3>
+<hr>
+<script type="text/javascript">
+	// new Object로 만들기
+	var book = new Object();
+	book.type = "HTML5";
+	book.name = "황기태";
+	book.balance=20000;
+	function view(){
+		document.write("book : "+book.type+", "+book.name+", "+book.balance+"<br>");
+	}
+
+	//리터럴표기법
+	var book1 ={
+		type : "HTML5(1)",
+		name : "황기태(1)",
+		balance : 20001,
+
+		view : function(){
+			document.write("book1 : "+book1.type+", "+book1.name+", "+book1.balance+"<br>");
+		}
+	};
+
+	//프로토타입
+	function book2(type, name, balance){
+		this.type = type;
+		this.name = name;
+		this.balance = balance;
+
+		this.view = function(){
+			document.write("book2 : "+this.type+", "+this.name+", "+this.balance+"<br>");
+		}
+	}
+
+	view();
+	book1.view();
+	var book2 = new book2("HTML5(2)","황기태(2)",20002);
+	book2.view();
+</script>
+</body>
+</html>
