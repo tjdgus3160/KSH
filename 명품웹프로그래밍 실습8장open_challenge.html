@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>갬블링 게임</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#div {
+			background-color: mistyrose;
+			border : 1px solid violet;
+			width: 300px;
+			height: 100px;
+			text-align: center;
+			letter-spacing: 20px;
+			font-size: 6em;
+			color: blue;
+			font-style: italic;
+		}
+		#result{
+			color: violet
+			font-style: italic;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+<h3>갬블링 게임</h3>
+<br>
+<p>각 숫자를 클릭하면 0에서 2사이의 난수로 바뀝니다. 모두 같은 수가 나오면 승리합니다.</p>
+<hr>
+<div id="div">
+	<span id="s1" onclick="r1()">0</span>
+	<span id="s2" onclick="r2()">0</span>
+	<span id="s3" onclick="r3()">0</span>
+</div>
+<div id="result" onclick="restart()"></div>
+<script type="text/javascript">
+	var t1=0;
+	var t2=0;
+	var t3=0;
+	var k;
+	var f;
+	function r1(){
+		if(t1 != 1){
+			var span = document.getElementById("s1");
+			var n=Math.floor(Math.random() * 3);
+			span.innerHTML=n;
+			k=n;
+			t1=1;
+			f=true;
+		}
+	}
+	function r2(){
+		if(t2!=1){
+			var span = document.getElementById("s2");
+			var n=Math.floor(Math.random() * 3);
+			span.innerHTML=n;
+			t2=1;
+			if(k!=n)
+				f=false;
+		}
+	}
+	function r3(){
+		if(t3!=1){
+			var span = document.getElementById("s3");
+			var n=Math.floor(Math.random() * 3);
+			span.innerHTML=n;
+			t3=1;
+			if(k!=n)
+				f=false;
+			result();
+		}
+	}
+	function result(){
+		var r=document.getElementById("result");
+		if(f==true)
+			r.innerHTML="Success(click here to do again)";
+		else
+			r.innerHTML="fail(click here to do again)";
+	}
+	function restart(){
+		t1=0;
+		t2=0;
+		t3=0;
+		var span=document.getElementsByTagName("span");
+		for(var i=0;i<span.length;i++)
+			span[i].innerHTML=0;
+		var result=document.getElementById("result");
+		result.innerHTML=""
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>라면을 끓이는 순서</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<h3>라면을 끓이는 순서</h3>
+<hr>
+<ol id="ol" type="A" style="background-color: yellowgreen" onclick="f()">
+	<li>물을 끓인다.</li>
+<script type="text/javascript">
+	function f(){
+		var s=prompt("라면을 끓이는 순서를 입력하라");
+		var li=document.createElement("li");
+		li.innerHTML=s;
+
+		var p = document.getElementById("ol");
+		p.appendChild(li);
+	}
+</script>
+</ol>
+</body>
+</html>
