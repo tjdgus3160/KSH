@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>계산기 만들기</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		button {width: 80px; height: 30px;}
+	</style>
+	<script type="text/javascript">
+		function back(){
+			var s=document.getElementById("view");
+			s.value=s.value.substr(0,s.value.length-1);
+
+		}
+		function input(s){
+			var a=document.getElementById("view");
+			if(a.value.length==1&&a.value=="0")
+				a.value=s;
+			else
+				a.value=a.value+s;
+		}
+		function ce(){
+			var s=document.getElementById("view");
+			s.value="0";
+		}
+		function result(){
+			var s=document.getElementById("view");
+			s.value=eval(s.value);
+		}
+	</script>
+</head>
+<body>
+<h3>계산기 만들기</h3>
+<hr>
+<input type="text" id="view" value="0" style="width: 340px;">
+<table border="0">
+	<tr>
+		<td><button onclick="back()">BACK</button></td>
+		<td><button onclick="ce()">CE</button></td>
+		<td><button onclick="ce()">C</button></td>
+		<td><button onclick="result()">=</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="input('7')">7</button></td>
+		<td><button onclick="input('8')">8</button></td>
+		<td><button onclick="input('9')">9</button></td>
+		<td><button onclick="input('/')">/</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="input('4')">4</button></td>
+		<td><button onclick="input('5')">5</button></td>
+		<td><button onclick="input('6')">6</button></td>
+		<td><button onclick="input('*')">*</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="input('1')">1</button></td>
+		<td><button onclick="input('2')">2</button></td>
+		<td><button onclick="input('3')">3</button></td>
+		<td><button onclick="input('-')">-</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="input('0')">0</button></td>
+		<td><button onclick="input('+')">+</button></td>
+		<td><button>NONE</button></td>
+		<td><button>NONE</button></td>
+	</tr>
+</table>
+</body>
+</html>
